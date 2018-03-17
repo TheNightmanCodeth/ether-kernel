@@ -9,7 +9,7 @@ Some headline features of Ether:
 - [X] Safety net patch   
 - [ ] Compiled using Linaro toolchain  
 - [ ] DNSCrypt  
-- [ ] Custom color profiles
+- [X] Custom color profiles
 - [ ] Configuration app
 
 All coming soon!
