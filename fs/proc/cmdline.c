@@ -42,7 +42,7 @@ static int __init proc_cmdline_init(void)
 		offset = offset_addr - cmd;
 
 		for (i = 1; i < (len - offset); i++) {
-			if (fmd[offset + i] == ' ')
+			if (cmd[offset + i] == ' ')
 				break;
 		}
 
