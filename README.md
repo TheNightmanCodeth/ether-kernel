@@ -6,10 +6,11 @@ Ether uses [android-linux-stable](https://github.com/android-linux-stable/wahoo)
 
 Some headline features of Ether:
 
-- Safety net patch 
-- Compiled using Linaro toolchain
-- DNSCrypt
-- Custom color profiles
+- [X] Safety net patch   
+- [ ] Compiled using Linaro toolchain  
+- [ ] DNSCrypt  
+- [ ] Custom color profiles
+- [ ] Configuration app
 
 All coming soon!
 
