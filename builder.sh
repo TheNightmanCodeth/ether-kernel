@@ -6,7 +6,7 @@
 ## your environment and run it before building.            ##
 #############################################################
 
-export CROSS_COMPILE=$(pwd)/prebuilt/linux-x86_64/bin/aarch64-linux-android-
+export CROSS_COMPILE=$(pwd)/prebuilt/bin/aarch64-linux-android-
 export ARCH=arm64 && export SUBARCH=arm64
 
 make clean
