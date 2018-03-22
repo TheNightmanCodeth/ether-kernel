@@ -1,4 +1,4 @@
-# Ether Kernel
+# ![Ether Kernel](https://github.com/TheNightmanCodeth/ether-kernel/blob/ether/resources/ether_logo.svg)
 
 This repo contains the source code for my custom android kernel, Ether.
 
