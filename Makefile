@@ -1,8 +1,8 @@
 VERSION = 4
 PATCHLEVEL = 4
-SUBLEVEL = 121
+SUBLEVEL = 122
 EXTRAVERSION =
-NAME = Blurry Fish Butt 
+NAME = Blurry Fish Butt
 
 # *DOCUMENTATION*
 # To see a list of typical targets execute "make help"
