@@ -94,13 +94,16 @@ static struct page **get_pages(struct drm_gem_object *obj)
 			return p;
 		}
 
+		msm_obj->pages = p;
+
 		msm_obj->sgt = drm_prime_pages_to_sg(p, npages);
 		if (IS_ERR(msm_obj->sgt)) {
-			dev_err(dev->dev, "failed to allocate sgt\n");
-			return ERR_CAST(msm_obj->sgt);
-		}
+			void *ptr = ERR_CAST(msm_obj->sgt);
 
-		msm_obj->pages = p;
+			dev_err(dev->dev, "failed to allocate sgt\n");
+			msm_obj->sgt = NULL;
+			return ptr;
+		}
 
 		/*
 		 * Make sure to flush the CPU cache for newly allocated memory
@@ -109,6 +112,10 @@ static struct page **get_pages(struct drm_gem_object *obj)
 		if (msm_obj->flags & (MSM_BO_WC|MSM_BO_UNCACHED))
 			dma_sync_sg_for_device(dev->dev, msm_obj->sgt->sgl,
 				msm_obj->sgt->nents, DMA_BIDIRECTIONAL);
+
+		if (msm_obj->sgt)
+			sh_free_table(msm_obj->sgt);
+
 	}
 
 	return msm_obj->pages;
